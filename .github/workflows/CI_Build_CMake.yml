@@ -1,0 +1,20 @@
+name: CMake CI for C/C++
+
+on: [push]
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Configue CMake
+      run: |
+        mkdir Build_CI
+        cmake . -BBuild_CI -DARCH=64 -DCMAKE_BUILD_TYPE=Release
+    - name: Build "Release" binaries
+      run: cmake --build Build_CI --config Release
+    - name: Test built app
+      run: |
+        cd Build_CI
+        ls -al

@@ -1,0 +1,81 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "24 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "48",
+		"MaxRendered" : "29"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema ST429-18-2019 constraint",
+			"NumIssues" : 1392
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema ST429-18-2019 constraint",
+			"NumIssues" : "1583 (= ST429-18-2019(1392) + DbyCinema(191))"
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : {
+				"AudioDataPCM is not allowed" : 1392
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : {
+				"BedDefinition contains invalid channel ID for DbyCinema" : 96,
+				"Multiple BedDefinitions are not allowed for DbyCinema" : 48,
+				"BedDefinition count must be persistent for DbyCinema" : 47
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		}
+	]
+}

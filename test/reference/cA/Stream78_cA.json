@@ -1,0 +1,83 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "60 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "120",
+		"MaxRendered" : "128"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema ST429-18-2019 constraint",
+			"NumIssues" : 120
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema ST429-18-2019 constraint",
+			"NumIssues" : "120 (= ST429-18-2019(120) + DbyCinema(0))"
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : 15360
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : "15480 (= IMF ST2067-201-2019(15360) + DbyIMF(120))"
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : {
+				"IABFrame size limit exceeded" : 120
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : {
+				"AudioDataDLC is not allowed" : 15360
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : {
+				"Frame sub-element order not meeting continuous audio sequence for DbyIMF" : 120
+			},
+			"Warnings" : 0
+		}
+	]
+}

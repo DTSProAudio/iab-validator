@@ -1,0 +1,88 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "24 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "48",
+		"MaxRendered" : "29"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "ValidWithWarning",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : 48
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "1488 (= ST2098-2-2018(48) + ST429-18-2019(1440))"
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "1727 (= ST2098-2-2018(48) + ST429-18-2019(1440) + DbyCinema(239))"
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "DbyIMF constraint",
+			"NumIssues" : 48
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : 0,
+			"Warnings" : {
+				"BedDefinition contains undefined or reserved channel ID" : 48
+			}
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : {
+				"AudioDataPCM is not allowed" : 1392,
+				"BedDefinition contains invalid or reserved channel ID" : 48
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : {
+				"BedDefinition contains invalid channel ID for DbyCinema" : 144,
+				"Multiple BedDefinitions are not allowed for DbyCinema" : 48,
+				"BedDefinition count must be persistent for DbyCinema" : 47
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : {
+				"BedDefinition contains invalid channel ID for DbyIMF" : 48
+			},
+			"Warnings" : 0
+		}
+	]
+}

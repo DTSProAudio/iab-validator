@@ -1,0 +1,89 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "24 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "48",
+		"MaxRendered" : "15"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "ValidWithWarning",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : 48
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "96 (= ST2098-2-2018(48) + ST429-18-2019(48))"
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "144 (= ST2098-2-2018(48) + ST429-18-2019(48) + DbyCinema(48))"
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : 768
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : "816 (= IMF ST2067-201-2019(768) + DbyIMF(48))"
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : 0,
+			"Warnings" : {
+				"BedDefinition contains undefined or reserved use case" : 48
+			}
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : {
+				"BedDefinition contains invalid or reserved use case" : 48
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : {
+				"BedDefinition contains invalid use case for DbyCinema" : 48
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : {
+				"BedDefinition contains invalid or reserved use case" : 48,
+				"AudioDataDLC is not allowed" : 720
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : {
+				"Frame sub-element order not meeting continuous audio sequence for DbyIMF" : 48
+			},
+			"Warnings" : 0
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "24 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "48",
+		"MaxRendered" : "128"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Valid",
+			"NumIssues" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : 6144
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2067-201-2019 constraint",
+			"NumIssues" : "6192 (= IMF ST2067-201-2019(6144) + DbyIMF(48))"
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : {
+				"AudioDataDLC is not allowed" : 6144
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : {
+				"Frame sub-element order not meeting continuous audio sequence for DbyIMF" : 48
+			},
+			"Warnings" : 0
+		}
+	]
+}

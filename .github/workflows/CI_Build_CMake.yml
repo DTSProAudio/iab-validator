@@ -8,12 +8,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        lfs: 'true'
     - name: Get dependency libjson, place libjson source under ./thirdparty
       run: |
         mkdir thirdparty
         curl -k -f -L https://sourceforge.net/projects/libjson/files/libjson_7.6.1.zip > libjson.zip
         unzip libjson.zip -d thirdparty
-    - name: Configue CMake
+    - name: Configure CMake
       run: |
         mkdir Build_CI
         cmake . -BBuild_CI -DARCH=64 -DCMAKE_BUILD_TYPE=Release
@@ -24,4 +26,7 @@ jobs:
         cd Build_CI
         ls -al
         ./iab-validator -h
-        
+    - name: Run functional tests
+      run: |
+        cd test/scripts
+        sh run_all.sh

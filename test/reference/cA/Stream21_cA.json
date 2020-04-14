@@ -1,0 +1,93 @@
+{
+	"BitStreamSummary" : {
+		"SampleRate" : "48kHz",
+		"FrameRate" : "24 fps",
+		"BitDepth" : "24-bit",
+		"FrameCount" : "48",
+		"MaxRendered" : "15"
+	},
+	"ValidationResultSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : 96
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "96 (= ST2098-2-2018(96) + ST429-18-2019(0))"
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "Cinema 2098-2-2018 constraint",
+			"NumIssues" : "144 (= ST2098-2-2018(96) + DbyCinema(48))"
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2098-2-2019 constraint",
+			"NumIssues" : 96
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2098-2-2019 constraint",
+			"NumIssues" : "816 (= IMF ST2098-2-2019(96) + IMF ST2067-201-2019(720))"
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"ValidationState" : "Invalid",
+			"IssueRootConstraintSet" : "IMF ST2098-2-2019 constraint",
+			"NumIssues" : "864 (= IMF ST2098-2-2019(96) + IMF ST2067-201-2019(720) + DbyIMF(48))"
+		}
+	],
+	"IssueOccurrenceSummary" : [
+		{
+			"Constraint" : "Cinema 2098-2-2018 constraint",
+			"Errors" : {
+				"Duplicate ObjectDefinition meta ID in frame" : 48
+			},
+			"Warnings" : {
+				"AudioDataDLC element not referenced by any BedDefinition or ObjectDefinition" : 48
+			}
+		},
+		{
+			"Constraint" : "Cinema ST429-18-2019 constraint",
+			"Errors" : 0,
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyCinema constraint",
+			"Errors" : {
+				"ObjectDefinition meta ID must be sequential for DbyCinema" : 48
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "IMF ST2098-2-2019 constraint",
+			"Errors" : {
+				"Duplicate ObjectDefinition meta ID in frame" : 48
+			},
+			"Warnings" : {
+				"AudioDataDLC element not referenced by any BedDefinition or ObjectDefinition" : 48
+			}
+		},
+		{
+			"Constraint" : "IMF ST2067-201-2019 constraint",
+			"Errors" : {
+				"AudioDataDLC is not allowed" : 720
+			},
+			"Warnings" : 0
+		},
+		{
+			"Constraint" : "DbyIMF constraint",
+			"Errors" : {
+				"Frame sub-element order not meeting continuous audio sequence for DbyIMF" : 48
+			},
+			"Warnings" : 0
+		}
+	]
+}
